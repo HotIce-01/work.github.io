@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州电子科技大学传播系</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           text-decoration: none;
+           list-style: none; 
+        }
+        .box,.nav,.container,.footer{
+            float: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 2000px;
+        }
+        .box {
+            display: flex;
+        }
+        .box0 {
+            flex: 1;
+            text-align: left;
+            background-color: #ffffff;
+            margin: 0px 0px 0px 0px;
+        
+        }
+        .box1 {
+
+            flex: 1;
+            text-align: right;
+            background-color: #ffffff;
+            margin: 0px 0px 0px 0px;
+            padding: 40px 0px 30px 0px;
+            width: 20px;
+        }
+        .box a{
+            color: rgb(206, 205, 232);
+            text-decoration: none;
+        }
+        .nav{
+        height: 40px;
+        background: #1e3e71;
+        box-shadow: 0 1px 2px #666;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+    .btli{
+        float: left;
+        width: 100px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .navlist a{
+        color: #fff;
+        display: block;
+    }
+    .navlist a:hover{
+        background: #a5b6da;
+    }
+    .droplist{
+        background: #1e3e71;
+        box-shadow: 0 1px 2px #333;
+        display: none;
+        border-radius: 6px;
+    }
+    .btli:hover .droplist{
+        display: block;
+    }
+        .lside{
+            width: 230px;
+            height: 1000px;
+            background-color: #4673bc;
+            float: left;
+            margin: -100px 20px 0 50px;
+            text-align: center;
+        }
+        .yqlj{
+            width: 230px;
+            height: 331px;
+            background: #fff;
+            margin: 90px 0 0 0;
+            box-shadow: #333;
+        }
+        .yqlj h2{
+            border: 2px solid #4673bc;
+            width: 200px;
+            height: 255px;
+            margin: 5px 0 0 15px;
+            background-color: #fff;
+        }
+        .bottom-image{
+            position: relative;
+            z-index: 1;
+        }
+        .content, .nav,.lside{
+            position: relative;
+            z-index: 2;
+        }
+        .content{
+            background: #1e3e71;
+            margin: -100px 280px ;
+            width: 75%;
+            height: 800px;
+            text-align: center;
+            color: #1e3e71;
+        }
+        .xwzx{
+            width: 1105px;
+            height: 610px;
+            background: #fff;
+            margin-top: 62px;
+        }
+        .xwzx h2{
+            border: 2px solid #4673bc;
+            width: 900px;
+            height: 500px;
+            margin-left: 100px;
+            background-color: #fff;
+            box-shadow: #333;
+        }
+        .image-link {
+            display: inline-block;
+            text-decoration: #1e3e71;
+            border: none;
+        }
+        .image-link img {
+            width: 40px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .image-link:hover img{
+            transform: scale(1.05);
+        }
+        .shell{
+            width: 800px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 20px 30px 20px rgba(0,0,0,0.25);
+            margin-left: 50px;
+        }
+        .images{
+            width: 500%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            left: 0;
+            transition: .2s;
+        }
+        .img{
+            width: 100%;
+            background-size: cover;
+        }
+        .img:nth-child(1){
+            background-image: url("轮播1.jpg");
+        }
+        .img:nth-child(2){
+            background-image: url("轮播2.png");
+        }
+        .img:nth-child(3){
+            background-image: url("轮播3.jpg");
+        }
+        .img:nth-child(4){
+            background-image: url("轮播4.png");
+        }
+        .img:nth-child(5){
+            background-image: url("轮播5.jpg");
+        }
+        .min{
+            display: flex;
+            justify-content: space-evenly;
+            position: absolute;
+            bottom: 40px;
+            width: 30%;
+            z-index: 999;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .m{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            border: solid rgba(255,255,255,0.5) 5px;
+            background-color: #fff;
+        }
+        .button{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            user-select: none;
+        }
+        .button-left,
+        .button-right {
+            font-size: 50px;
+            background-color: rgba(160,193,255,0.2);
+            padding: 0 20px;
+            cursor: pointer;
+            line-height: 700px;
+            color: #fff;
+        }
+        .xszs{
+            width: 1105px;
+            height: 550px;
+            background: #fff;
+            text-align: center;
+        }
+        .xszs h2{
+            border: 2px solid #4673bc;
+            width: 900px;
+            height: 500px;
+            margin-left: 100px;
+            background-color: #fff;
+            box-shadow: #333;
+        }
+        .footer{
+            padding: 10px;
+            background: #4673bc;
+            text-align: center;
+        }
+        @media screen and (max-width:700px){
+            .lside,.content{
+                width: 100%;
+                margin: 0px;
+            }
+        }
+        ul ,p{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="box">
+        <div class="box0">
+        <tr>
+            <td><img src="学校logo.png" style="max-width: 100;" height="120px" alt="杭州电子科技大学传播系"></td>
+            <td><img src="标题.png" style="max-width: 90;" height="120px" ></td>
+        </tr>
+    </div>
+    <div class="box1">
+       <tr>
+        <td>
+            <a href="#">联系我们</a>
+            <a href="#">ENGLISH</a>
+            <br>
+            <input type="text" value="" maxlength="10" placeholder="请输入内容" style="width: 180px; height: 30px;">
+            <button type="button">搜索</button>
+
+       </tr>
+    </div>
+</div>
+    </header>
+    <div class="nav">
+        <ul class="navlist">
+            <li class="btli"><a href="#">首页</a></li>
+            <li class="btli"><a href="#">本系概况</a>
+                <ul class="droplist">
+                    <li><a href="#">传播系简介</a></li>
+                    <li><a href="#">领导团队</a></li>
+                    <li><a href="#">学院机构</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">新闻资讯</a>
+                <ul class="droplist">
+                    <li><a href="#">本系新闻</a></li>
+                    <li><a href="#">通知公告</a></li>
+                    <li><a href="#">学工资讯</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">教职员工</a>
+                <ul class="droplist">
+                    <li><a href="#">在职教师</a></li>
+                    <li><a href="#">退休教师</a></li>
+                    <li><a href="#">党政教辅</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">学术科研</a>
+                <ul class="droplist">
+                    <li><a href="#">科研动态</a></li>
+                    <li><a href="#">学术成功</a></li>
+                    <li><a href="#">学术资源</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">人才培养</a>
+                <ul class="droplist">
+                    <li><a href="#">招生信息</a></li>
+                    <li><a href="#">本科生</a></li>
+                    <li><a href="#">研究生</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">学生天地</a>
+                <ul class="droplist">
+                    <li><a href="#">作品与获奖</a></li>
+                    <li><a href="#">学生活动</a></li>
+                    <li><a href="#">就业实习</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">系友会</a>
+                <ul class="droplist">
+                    <li><a href="#">系友动态</a></li>
+                    <li><a href="#">校友风采</a></li>
+                    <li><a href="#">捐赠</a></li>
+                </ul></li>
+            <li class="btli"><a href="#">党团建设</a>
+                <ul class="droplist">
+                    <li><a href="#">党建</a></li>
+                    <li><a href="#">团建</a></li>
+                </ul></li>
+        </ul>
+    </div>
+        <div class="container">
+            <h2>
+                <img src="教学楼.jpg" class="bottom-image" style="max-width: 500;" height="600px" alt="杭州电子科技大学传播系">
+            </h2>
+            <div class="lside">
+                <h2>最新</h2>
+                <p>
+                    <section class="announcement">
+                    <h2>通知公告</h2>
+                    <ul>
+                        <li>2024-2-13 系公告标题</li>
+                        <li>2024-3-4 系公告标题</li>
+                        <li>2024-4-20 系公告标题</li>
+                        <li>2024-5-6 系公告标题</li>
+                    </ul>
+                </section>
+        
+                <section class="research">
+                    <h2>科研动态</h2>
+                    <ul>
+                        <li>2024-1-24 科研动态标题</li>
+                        <li>2024-2-3 科研动态标题</li>
+                        <li>2024-3-12 科研动态标题</li>
+                        <li>2024-4-23 科研动态标题</li>
+                        <li>2024-1-24 科研动态标题</li>
+                        <li>2024-2-3 科研动态标题</li>
+                        <li>2024-3-12 科研动态标题</li>
+                        <li>2024-4-23 科研动态标题</li>
+                        <li>2024-1-24 科研动态标题</li>
+                        <li>2024-2-3 科研动态标题</li>
+                        <li>2024-3-12 科研动态标题</li>
+                        <li>2024-4-23 科研动态标题</li>
+                        <li>2024-1-24 科研动态标题</li>
+                        <li>2024-2-3 科研动态标题</li>
+                        <li>2024-3-12 科研动态标题</li>
+                        <li>2024-4-23 科研动态标题</li>
+                    </ul>
+                </section>
+        
+                <section class="student-affairs">
+                    <h2>学工资讯</h2>
+                    <ul>
+                        <li>2024-1-23 学工资讯标题</li>
+                        <li>2024-2-11 学工资讯标题</li>
+                        <li>2024-3-13 学工资讯标题</li>
+                        <li>2024-4-22 学工资讯标题</li>
+                        <li>2024-1-23 学工资讯标题</li>
+                        <li>2024-2-11 学工资讯标题</li>
+                        <li>2024-3-13 学工资讯标题</li>
+                        <li>2024-4-22 学工资讯标题</li>
+                    </ul>
+                </section>
+                <div class="yqlj">
+                    <p><img src="友情链接.png" class="bottom-image" style="max-width: 180px;" height="50px" alt="杭州电子科技大学传播系"></p>
+                    <h2>
+                        <img src="友情链接3.jpg" class="bottom-image" style="max-width: 200px;" height="70px" alt="杭州电子科技大学传播系">
+                        <img src="友情链接2.jpg" class="bottom-image" style="max-width: 200px;" height="70px" alt="杭州电子科技大学传播系">
+                        <img src="友情链接1.png" class="bottom-image" style="max-width: 200px;" height="70px" alt="杭州电子科技大学传播系">
+                    </h2>
+                </div>
+                </p>
+            </div>
+            <div class="content">
+                <h2>最新</h2>
+                <div class="xwzx">
+                    <h2>
+                        <img src="新闻资讯.png" class="bottom-image" style="max-width: 200px;" height="60px" alt="杭州电子科技大学传播系">
+                        <a href="file:///D:/html/%E6%9D%AD%E5%B7%9E%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E4%BC%A0%E6%92%AD%E7%B3%BB/%E5%AD%A6%E7%94%9F%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA.html" class="image-link">
+                            <img src="控件图标2.png" alt="Clickable Image">
+                          </a>
+                          <div class="shell">
+                            <ul class="images">
+                                <li class="img"></li>
+                                <li class="img"></li>
+                                <li class="img"></li>
+                                <li class="img"></li>
+                                <li class="img"></li>
+                            </ul>
+                            <ul class="min">
+                                <li class="m"></li>
+                                <li class="m"></li>
+                                <li class="m"></li>
+                                <li class="m"></li>
+                                <li class="m"></li>
+                            </ul>
+                            <div class="button">
+                                <div class="button-left">&lt;</div>
+                                <div class="button-right">&gt;</div>
+                            </div>
+                        </div>
+                        <script>
+            let left = document.querySelector(".button-left")
+            let right = document.querySelector(".button-right")
+            let m = document.querySelectorAll(".m")
+            let images = document.querySelector(".images")
+            let index = 0
+            let time
+            function position() {
+                images.style.left = (index * -100) + "%"
+            }
+            function add(){
+                if (index >= m.length - 1) {
+                    index = 0
+                }else{
+                    index++
+                }
+            }
+            function desc() {
+                if (index < 1) {
+                    index = m.length - 1
+                }else{
+                    index--
+                }
+            }
+            function timer() {
+                time = setInterval(() => {
+                    index++
+                    desc()
+                    add()
+                    position()
+                }, 3000)
+            }
+            left.addEventListener("click",() => {
+                desc()
+                position()
+                clearInterval(time)
+                timer()
+            })
+            right.addEventListener("click", () => {
+                add()
+                position()
+                clearInterval(time)
+                timer()
+            })
+            for(let i = 0; i < m.length; i++) {
+                m[i].addEventListener("click",() => {
+                    index = i;
+                    position();
+                    clearInterval(time)
+                    timer()
+                })
+            }
+            timer
+        </script>
+                    </h2>
+                </div>
+                <div class="xszs">
+                    <img src="作品展示.png" class="bottom-image" style="max-width: 200px;" height="60px" alt="杭州电子科技大学传播系">
+                    <a href="file:///D:/html/%E6%9D%AD%E5%B7%9E%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E4%BC%A0%E6%92%AD%E7%B3%BB/%E5%AD%A6%E7%94%9F%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA.html" class="image-link">
+                        <img src="控件图标2.png" alt="Clickable Image">
+                      </a>
+                    <h2>
+                        <p>
+                            <img src="学生作品展示1.jpg" class="bottom-image" width="250px" height="250px" alt="杭州电子科技大学传播系">
+                            <img src="学生作品展示2.jpg" class="bottom-image" width="280px" height="200px" alt="杭州电子科技大学传播系">
+                            <img src="学生作品展示3.jpg" class="bottom-image" width="250px" height="200px" alt="杭州电子科技大学传播系">
+                        </p>
+                        <p>
+                            <img src="学生作品展示4.jpg" class="bottom-image" width="250px" height="200px" alt="杭州电子科技大学传播系">
+                            <img src="学生作品展示5.jpg" class="bottom-image" width="250px" height="200px" alt="杭州电子科技大学传播系">
+                            <img src="学生作品展示6.jpg" class="bottom-image" width="280px" height="220px" alt="杭州电子科技大学传播系">
+                        </p>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>首页 本系概况 新闻资讯 教职员工 学术科研 系友会 团党建设 人才培养 学生天地</p>
+            <p>Copyright 杭州电子科技大学传播系版权所有. All rights reserved</p>
+            <p>地址：杭州市江干区2号大街1158号</p>
+            <p>电话：xxxxxxxxxxxxxx 邮箱：xxxx@xxxxxx</p>
+        </div>
+</body>
+</html>
